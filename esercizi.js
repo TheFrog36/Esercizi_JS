@@ -1,98 +1,69 @@
-console.log('scrivere un ciclo for che scriva a console i numeri da 10 a 50');
 
-for(let i = 10; i <= 50; i++){
-    console.log(i);
+//1) Ciclo for che parta da 0 e vada a 100. A ogni giro stampare il valore di 'i' 
+//   e stampare fizz se 'i' è divisibile per 3, buzz se è per 5 e fizzbuzz
+//   e fizzbuzz se è divisibile per entrambi
+
+for(let i = 1; i <= 100; i++){
+    let txt = "";
+    if(i % 3 === 0) txt +="fizz";
+    if(i % 5 === 0) txt +="buzz";
+    console.log(i, txt);
 }
 
-// let counter = 10;
-// while(counter <= 50){
-//     console.log(counter)
-//     counter++;
-// }
+//2) Creare un programma che stampi a console questa scacchiera:
+//   # # # # 
+//    # # # # 
+//   # # # # 
+//    # # # # 
+//   # # # # 
+//    # # # # 
+//   # # # # 
+//    # # # # 
 
-// let counter = 10;
-// do{
-//     console.log(counter);
-//     counter++;
-// }
-// while(counter <=50 );
-
-
-
-console.log('scrivere un ciclo for che scriva a console i numeri pari da 8 a 128');
-
-for(let i = 8; i <= 128; i += 2){
-    console.log(i);
+for(let i = 0; i < 8; i++){
+    let txt = '';
+    for(let j = 0; j < 8; j++){
+        if((j % 2 === 0 && i % 2 ===0) || (j % 2 !== 0 && i % 2 !==0 )){
+            txt += "#";
+        } else {
+            txt +=" "
+        }
+    }
+    console.log(txt);
 }
 
-// let counter = 8;
-// while(counter <=128){
-//     console.log(counter);
-//     counter +=2;
-// }
+//3) Creare questa scacchiera in console
+// #
+// ##
+// ###
+// ####
+// #####
+// ######
 
-// let counter = 8;
-// do{
-//     console.log(counter);
-//     counter += 2;
-// }
-// while(counter <= 128);
-
-
-
-console.log('scrivere un ciclo for che scriva a console i numeri da 100 a 0');
-
-for(i = 100; i >= 0; i--){
-    console.log(i);
+let lines_number = 9
+for(let i = 0; i <= lines_number; i++){
+    let txt = '';
+    for(let j = 0; j < i; j++){
+        txt += '#';
+    }
+    console.log(txt);
 }
 
-// let counter = 100;
-// while(counter >= 0){
-//     console.log(counter);
-//     counter--;
-// }
+//4) Creare questa scacchiera in console
+//    #
+//   ###
+//  #####
+// #######
+//#########
 
-// let counter = 100;
-// do{
-//     console.log(counter);
-//     counter--
-// }
-// while(counter >= 0);
-
-
-
-console.log('scrivere un ciclo for che sommi i numeri da 0 a 100');
-
-// let somma = 0;
-// for(i = 1; i <= 100; i++){
-//     somma += i;
-// }
-// console.log(somma);
-
-// let somma = 0;
-// let counter = 1;
-// while(counter <= 100){
-//     somma += counter;
-//     counter++;
-// }
-// console.log(somma);
-
-let somma = 0;
-let counter = 1;
-do{
-    somma += counter;
-    counter ++;
+let n_lines = 10;
+for(let i = 1; i <= n_lines; i++){
+    let txt = '';
+    for(let j = 0; j < n_lines - i; j++){
+        txt += ' ';
+    }
+    for(let k = 0; k < i * 2 -1; k++){
+        txt += '#';
+    }
+    console.log(txt);
 }
-while(counter <= 100);
-console.log(somma);
-
-
-
-console.log("scivere un ciclo while che si interrompa quando l'utente scrive 'esci'nella finestra di dialogo");
-
-let check = true;
-while(check){
-    const user_input = prompt('Scrivi "esci" per uscire dal loop');
-    if(user_input === 'esci') check = false;
-}
-
